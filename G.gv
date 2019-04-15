@@ -1,0 +1,22 @@
+digraph G {
+	graph [color=white fillcolor=white fontcolor="#414141" style=rounded]
+	node [color="#aaaaaa" fillcolor=white fontcolor="#414141" penwidth=2 style=filled]
+	edge [arrowsize=1.2 color="#aaaaaa" fontcolor="#414141" penwidth=2.5]
+	X [label=X]
+	y [label=y]
+	dnn [label=dnn]
+	loss [label=loss]
+	train [label=train]
+	eval [label=eval]
+	init [label=init]
+	save [label=save]
+	X -> dnn [label="?×784"]
+	y -> loss [label=""]
+	dnn -> loss
+	dnn -> train
+	loss -> train
+	X -> train [label="?×784"]
+	y -> eval [label=""]
+	dnn -> eval
+	dnn -> save
+}
